@@ -1,6 +1,9 @@
 task groovy {
 
 }
+/*
+Groovy Closure and Lambda expression example
+*/
 
 def foo = "one million dollar"
 
@@ -24,3 +27,15 @@ def applyTwice(func, arg) {
 
 foo = 5
 println "The foo is $foo and after double it twice, it is ${applyTwice(doubleIt, foo)}"
+
+/*
+Groovy complex closure example and List
+*/
+
+def myList = ["gradle", "groovy", "stringItem"]
+
+def printItem = {item -> println "One of the myList item is $item"}
+
+myList.each(printItem)
+
+myList.each{println "Compact closure example. myList item is $it"}
