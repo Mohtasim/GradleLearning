@@ -1,0 +1,32 @@
+/*
+Task Configuration Example. 
+Notes:
+I. Project interface basically takes the whole build script as closure.
+*/
+
+project.task("myTask1")
+task("myTask2")
+task "myTask3"
+task myTask4
+
+/*
+Task - myTask4 configuration
+*/
+
+myTask4.group = "This is the catagory of the task - myTask4"
+myTask4.description = "This is myTask4"
+myTask4.doLast { println "This is done last."}
+myTask4.doFirst { println "This is done First."}
+
+/*
+Declaring a task configuration
+*/
+
+task myTask5 {
+    description "This is myTask5"
+    group "Some Group"
+    doLast {
+        println "This is done last for myTask5"
+    }
+}
+
