@@ -39,3 +39,33 @@ def printItem = {item -> println "One of the myList item is $item"}
 myList.each(printItem)
 
 myList.each{println "Compact closure example. myList item is $it"}
+
+/*
+Groovy class example
+Groovy has its own class declaring syntex but under the hood its basically java.
+Note: Groovy automatically sets getters and setters for all its member variables.
+*/
+
+class GroovyGreeter {
+    String greeting = 'Default Greeting'
+    def printGreeting() {
+        println "Greeting: $greeting"
+    }
+}
+
+def groovyGreeter = new GroovyGreeter()
+groovyGreeter.printGreeting()
+groovyGreeter.greeting = "Hello Groovy Class"
+groovyGreeter.printGreeting()
+
+/*
+Delegate in closure example
+*/
+
+def greetingClosure = {
+    greeting = "Greeting from Closure."
+    printGreeting()
+}
+
+greetingClosure.delegate = groovyGreeter
+greetingClosure()
