@@ -1,0 +1,22 @@
+/*
+We'll discuss three ways to configure the relationships between tasks:
+`dependsOn`, `finalizedBy`, and `mustRunAfter`.
+
+Task A `dependsOn` task B if task A can't do its work without task B having
+done its work. To take a familiar example, when you're getting up in the
+morning, you can't put on your shoes without putting on your socks first.
+Let's declare and configure some tasks to represent this process.
+*/
+
+task putOnSocks {
+    doLast {
+        println "Putting on Socks."
+    }
+}
+
+task putOnShoes {
+    dependsOn "putOnSocks"
+    doLast {
+        println "Putting on Shoes."
+    }
+}
